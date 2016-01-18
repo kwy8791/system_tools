@@ -325,6 +325,7 @@ while [ 1 ]; do
 		export HISTFILESIZE=
 		export HISTSIZE=
 		EOF
+
 		f_eecho "Finished changing format of 'history' command."
 		break
 	elif [ \( "${yesno}" = "n" \) -o \( "${yesno}" = "N" \) ]; then
@@ -336,7 +337,7 @@ while [ 1 ]; do
 	fi
 done
 
-f_eecho "`Finish changing history format. Continuing...."
+f_eecho "Finish changing history format. Continuing...."
 
 #################################
 # set auto logging
@@ -409,7 +410,7 @@ f_eecho "Finished executing system upgrade."
 #################################
 f_eecho "================================================================="
 f_eecho  "Start reboot OS operation."
-fnf_eecho "Do you want to execute this operation? (Y/n): "
+f_necho "Do you want to execute this operation? (Y/n): "
 
 read yesno
 yesno=${yesno:-Y}
