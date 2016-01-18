@@ -102,7 +102,7 @@ while [ 1 ]; do
 		if [ -e /etc/yum.conf ]; then
 			cp -ip --parents /etc/yum.conf /var/tmp/infrawork/bkup
 			sed -i -e "s/^keepcache=0/keepcache=1/" /etc/yum.conf
-			diff /etc/yum.conf /var/tmp/infrawork/bkup/etc/yum.conf
+			diff /etc/yum.conf /var/tmp/infrawork/bkup/etc/yum.conf || echo -n
 		else
 			f_eecho "Cannot find /etc/yum.conf. skipping...."
 		fi
@@ -288,7 +288,7 @@ while [ 1 ]; do
 			f_eecho "input your ssh key"
 			f_necho "ssh key: "
 			read "sshkeychane"
-			f_eecho "${sshkeychane}" >> "${user_dir}"/.ssh/authorized_keys
+			echo "${sshkeychane}" >> "${user_dir}"/.ssh/authorized_keys
 			chown -R ${user_name} ${user_dir}/.ssh
 			chmod -R 700 "${user_dir}"/.ssh
 		done
@@ -385,6 +385,7 @@ read yesno
 yesno=${yesno:-Y}
 while [ 1 ]; do
 	if [ \( "${yesno}" = "y" \) -o \( "${yesno}" = "Y" \) ]; then
+		
 		if [ -x `which dnf` ]; then
 			dnf -y upgrade
 		elif [ -x `which yum` ]; then
