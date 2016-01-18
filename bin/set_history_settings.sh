@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source /conf/common_settings.sh
+source ${myscript_home}/conf/common_settings.sh
 
 #################################
 # format and size setting for history command
@@ -34,7 +34,4 @@ while [ 1 ]; do
 done
 
 f_eecho "Finish changing history format. Continuing...."
-
-
-exit 0
 

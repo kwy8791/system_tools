@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source /conf/common_settings.sh
+source ${myscript_home}/conf/common_settings.sh
 
 #################################
 # reboot
@@ -35,7 +35,4 @@ while [ 1 ]; do
 done
 
 f_eecho "Finish All Operations. See You Again someday, somewhere...."
-
-
-exit 0
 

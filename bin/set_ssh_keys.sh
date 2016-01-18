@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source /conf/common_settings.sh
+source ${myscript_home}/conf/common_settings.sh
 
 #################################
 # setting ssh key
@@ -47,8 +47,4 @@ while [ 1 ]; do
 done
 
 f_eecho "Finished about users' ssh-key settings"
-
-
-
-exit 0
 

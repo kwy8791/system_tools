@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source /conf/common_settings.sh
+source ${myscript_home}/conf/common_settings.sh
 
 #################################
 # create user
@@ -62,7 +62,4 @@ while [ 1 ]; do
 done
 
 f_eecho "Finished user creation."
-
-
-exit 0
 

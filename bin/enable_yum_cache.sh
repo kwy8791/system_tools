@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source /conf/common_settings.sh
+source ${myscript_home}/conf/common_settings.sh
 
 #################################
 # enable yum cache
@@ -34,7 +34,4 @@ while [ 1 ]; do
 done
 
 f_eecho "Finished change setting of yum cache."
-
-
-exit 0
 

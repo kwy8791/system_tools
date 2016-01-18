@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source /conf/common_settings.sh
+source ${myscript_home}/conf/common_settings.sh
 
 #################################
 # disable selinux
@@ -15,7 +15,7 @@ yesno=${yesno:-Y}
 while [ 1 ]; do
 	if [ \( "${yesno}" = "y" \) -o \( "${yesno}" = "Y" \) ]; then
 		if [ -e /etc/selinux/config ];then
-			cp -ip --parents /etc/selinux/config /var/tmp/infrawork/bkup
+			cp -p --parents /etc/selinux/config /var/tmp/infrawork/bkup
 			sed -i -e "s/SELINUX=enforcing/SELINUX=disabled/" /etc/selinux/config
 			diff /etc/selinux/config /var/tmp/infrawork/bkup/etc/selinux/config
 		else
@@ -38,7 +38,4 @@ while [ 1 ]; do
 done
 
 f_eecho "Finished selinux disabled. (But need reboot)"
-
-
-exit 0
 

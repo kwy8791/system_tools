@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source /conf/common_settings.sh
+source ${myscript_home}/conf/common_settings.sh
 
 #################################
 # start sshd
@@ -43,7 +43,4 @@ while [ 1 ]; do
 done
 
 f_eecho "Finished sshd operation."
-
-
-exit 0
 

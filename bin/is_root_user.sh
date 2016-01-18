@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source /conf/common_settings.sh
+source ${myscript_home}/conf/common_settings.sh
 
 #################################
 # Check whether you are root?
@@ -34,7 +34,4 @@ fi
 f_eecho "\e[1;30;42m O.K. \e[m You are 'root' user."
 f_eecho "\e[1;30;42m Check passed! \e[m"
 f_eecho "Finished User Checking. Continuing...."
-
-
-exit 0
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source /conf/common_settings.sh
+source ${myscript_home}/conf/common_settings.sh
 
 #################################
 # yum upgrade
@@ -34,8 +34,4 @@ while [ 1 ]; do
 done
 
 f_eecho "Finished executing system upgrade."
-
-
-
-exit 0
 
