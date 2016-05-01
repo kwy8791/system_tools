@@ -40,7 +40,7 @@ while [ 1 ]; do
 					mkdir ${SYS_ROOTDIR}/src/${mdir}
 					rtn_cd=$?
 					if [ ${rtn_cd} -ne 0 ]; then
-						f_eecho "\e[1;37;41m cannot created ${SYS_ROOTDIR}/src/${mdir}. exit \e[m""
+						f_eecho "\e[1;37;41m cannot created ${SYS_ROOTDIR}/src/${mdir}. exit \e[m"
 					else
 						f_eecho "created ${SYS_ROOTDIR}/src/${mdir}"
 					fi
