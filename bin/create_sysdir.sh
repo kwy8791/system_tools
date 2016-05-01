@@ -6,7 +6,7 @@ source ${myscript_home}/conf/common_settings.sh
 # create system directory
 #################################
 
-SYS_ROOTDIR=/var/tmp
+SYS_ROOTDIR=/var/tmp/infrawork
 
 f_eecho "================================================================="
 f_eecho "Start creating system-admins' directories."
@@ -14,6 +14,15 @@ f_necho "Do you want to execute this operation? (Y/n): "
 
 read yesno
 yesno=${yesno:-Y}
+mkdir ${SYS_ROOTDIR}
+rtn_cd=$?
+if [ ${rtn_cd} -ne 0 ]; then
+	f_eecho "\e[1;37;41m cannot created ${SYS_ROOTDIR}. exit. \e[m"
+	exit 1
+else
+	f_eecho "created ${SYS_ROOTDIR}."
+fi
+
 while [ 1 ]; do
 	if [ \( "${yesno}" = "y" \) -o \( "${yesno}" = "Y" \) ]; then
 		if [ -d ${SYS_ROOTDIR} ]; then
