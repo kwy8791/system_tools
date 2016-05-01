@@ -22,7 +22,7 @@ while [ 1 ]; do
 			chmod 777 /var/tmp/infrawork/log/history
 		fi
 		EOF
-		echo '/var/tmp/infrawork/log/history/`date +%Y%m%d-%H%M%S`-${USER}.log' >> /etc/profile
+		echo '/bin/script /var/tmp/infrawork/log/history/`date +%Y%m%d-%H%M%S`-${USER}.log' >> /etc/profile
 		break
 	elif [ \( "${yesno}" = "n" \) -o \( "${yesno}" = "N" \) ]; then
 		f_eecho "Operation passed. Continuing...."
