@@ -1,8 +1,7 @@
 #!/bin/sh
 
 #	ヘッダの書き出し
-echo "| uid(username) | primary gid(group name) | secondary gid(group name) |"
-echo "| --------------|-------------------------|---------------------------|"
+echo "uid(username) , primary gid(group name) , secondary gid(group name) ,"
 
 # list user in variable user_name
 for user_name in `cut -f1 -d: /etc/passwd`; do
@@ -20,7 +19,7 @@ for user_name in `cut -f1 -d: /etc/passwd`; do
 	sgroup_info=`echo $raw_line |cut -f3 -d' '`
 
 #	出力
-	echo "| ${user_info} | ${pgroup_info} | ${sgroup_info} |"
+	echo "${user_info} , ${pgroup_info} , ${sgroup_info} ,"
 done
  
 
