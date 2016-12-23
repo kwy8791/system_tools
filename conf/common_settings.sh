@@ -4,10 +4,6 @@
 # unvariables
 ####5####0####5####0####5####0####5####0
 export PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:./bin"
-
-####5####0####5####0####5####0####5####0
-# unvariables
-####5####0####5####0####5####0####5####0
 export datetime_cmd="date +%Y-%m-%d_%H:%M:%S"
 
 ####5####0####5####0####5####0####5####0
